@@ -22,4 +22,11 @@ public class DocuportConstants {
     public static final String CLIENT = "client";
     public static final String SUPERVISOR = "supervisor";
     public static final String EMPLOYEE = "employee";
+
+    public static final int extraSmall = 3;
+    public static final int small = 5;
+    public static final int medium = 7;
+    public static final int large = 10;
+    public static final int extraLarge = 20;
+
 }
