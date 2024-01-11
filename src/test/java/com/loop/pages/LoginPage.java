@@ -19,6 +19,21 @@ public class LoginPage {
     @FindBy (xpath = "//button[@type='submit']")
     public WebElement loginButton;
 
+    @FindBy (xpath = "//button[@type='submit']/span")
+    public WebElement submitButton;
+
+    @FindBy (xpath = "//span[.='Batch1 Group1']")
+    public WebElement logoutBatch;
+
+    @FindBy (xpath = "//span[.='Log out']")
+    public WebElement logOutButton;
+
+
+
+
+
+
+
 
 
 

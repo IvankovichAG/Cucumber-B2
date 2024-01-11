@@ -16,6 +16,8 @@ public class DocuportConstants {
     public static final String USERNAME_ADVISOR = "b1g1_advisor@gmail.com";
     public static final String USERNAME_SUPERVISOR = "b1g1_supervisor@gmail.com";
     public static final String USERNAME_EMPLOYEE = "b1g1_employee@gmail.com";
+    public static final String DOCUPORT_LOGINPAGE_URL = "https://beta.docuport.app/login";
+    public static final String DOCUPORT_URL = "https://beta.docuport.app/";
 
     // roles
     public static final String ADVISOR = "advisor";
@@ -27,6 +29,6 @@ public class DocuportConstants {
     public static final int small = 5;
     public static final int medium = 7;
     public static final int large = 10;
-    public static final int extraLarge = 20;
+    public static final int extraLarge = 30;
 
 }
