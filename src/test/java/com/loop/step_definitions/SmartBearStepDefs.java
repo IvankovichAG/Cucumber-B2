@@ -49,7 +49,10 @@ public class SmartBearStepDefs {
        smartBearOrderPage.zip.sendKeys(addressZip);}
     @When("user selects credit card type {string}")
     public void user_selects_credit_card_type(String cardType) {
+
     smartBearOrderPage.chooseCard(cardType);
+
+
     }
     @When("user enters credit car number {string}")
     public void user_enters_credit_car_number(String ccNumber) {

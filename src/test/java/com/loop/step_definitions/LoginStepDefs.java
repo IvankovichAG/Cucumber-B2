@@ -5,6 +5,8 @@ import com.loop.utilities.*;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import java.util.Map;
 
@@ -12,14 +14,22 @@ import static org.junit.Assert.assertTrue;
 
 public class LoginStepDefs {
 
+    private static final Logger LOG = LogManager.getLogger();
     LoginPage loginPage = new LoginPage();
     @Given("user is on Docuport login page")
-    public void user_is_on_docuport_login_page() {Driver.getDriver().get(ConfigurationReader.getProperty("env"));
+
+    public void user_is_on_docuport_login_page() {
+
+//        String envFromJenkins = System.getenv("env");    !!!!!!!!!! this will read from parameters you created in Jenkins job
+//        Driver.getDriver().get(ConfigurationReader.getProperty(envFromJenkins));
+
+        Driver.getDriver().get(ConfigurationReader.getProperty("env"));
     BrowserUtils.takeScreenshot();}
     @When("user enters username for client")
     public void user_enters_username_for_client() {
         BrowserUtils.waitForClickable(loginPage.loginButton, DocuportConstants.large);
-        loginPage.usernameInput.sendKeys(DocuportConstants.USERNAME_CLIENT);}
+        loginPage.usernameInput.sendKeys(DocuportConstants.USERNAME_CLIENT);
+    LOG.info("just trying to show where I put LOGs");}
     @When("user enters password for client")
     public void user_enters_password_for_client() {
         loginPage.passwordInput.sendKeys(DocuportConstants.PASSWORD);}
@@ -28,8 +38,9 @@ public class LoginStepDefs {
         loginPage.loginButton.click();}
     @Then("user should see the home page for client")
     public void user_should_see_the_home_page_for_client() {
-//        BrowserUtils.waitForClickable(loginPage.submitButton, DocuportConstants.extraLarge);
-//        loginPage.submitButton.click();
+        BrowserUtils.waitForClickable(loginPage.submitButton, DocuportConstants.extraLarge);
+        loginPage.submitButton.click();
+        //BrowserUtils.justWait(5);
         assertTrue(Driver.getDriver().getCurrentUrl().equals(DocuportConstants.DOCUPORT_URL));
     BrowserUtils.takeScreenshot();}
     @Then("user clicks logout button")
@@ -49,6 +60,7 @@ public class LoginStepDefs {
     @Then("user should see the home page for employee")
     public void user_should_see_the_home_page_for_employee() {
         BrowserUtils.waitForVisibility(loginPage.logoutBatch, DocuportConstants.large);
+        BrowserUtils.justWait(5);
         assertTrue(Driver.getDriver().getCurrentUrl().equals(DocuportConstants.DOCUPORT_URL));}
     @When("user enters username for advisor")
     public void user_enters_username_for_advisor() {

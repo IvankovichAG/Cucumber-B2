@@ -3,7 +3,7 @@ Feature: Docuport Login Logout Feature
   Background:
     Given user is on Docuport login page
 
-  @B2G2-262 @B2G2-219 @wip
+  @B2G2-262 @B2G2-219 @wip @smoke
   Scenario: Login as a client
     When user enters username for client
     And user enters password for client

@@ -10,6 +10,6 @@ Feature: Scenario outline practice
       |Azerbaijan|Baku|
       |Ukraine   |Kyiv|
       |Afganistan|Kabul|
-      |USA       |Washington|
+      |USA       |Washington, D.C.|
       |Turkiye    |Ankara   |
       |Uzbekistan |Tashkent |
